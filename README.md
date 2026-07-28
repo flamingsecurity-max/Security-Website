@@ -1,0 +1,67 @@
+# Flaming Security — Website v2
+
+A 5-page static site: Home, About, Leadership, Units & KPIs, Contact.
+
+## Deploy to Vercel
+
+### Option A — Drag & Drop (fastest)
+1. Go to https://vercel.com → **Add New Project → Deploy without Git**
+2. Drag the entire `flaming-security-v2` folder into the upload box
+3. Leave all settings as default and click Deploy
+4. Live in under a minute at e.g. `https://flaming-security.vercel.app`
+
+### Option B — Git (recommended for future updates)
+1. Push this folder to a GitHub repo
+2. Go to https://vercel.com → **Add New Project → Import Git Repository**
+3. Select your repo. Set:
+   - **Framework Preset:** Other
+   - **Root Directory:** `.` (or the folder if nested)
+   - **Build Command:** *(leave blank)*
+   - **Output Directory:** `.`
+4. Click Deploy. Every `git push` auto-publishes from then on.
+
+### Custom domain
+Project Settings → Domains → Add your domain, then update DNS as Vercel guides you.
+
+## Editing content
+
+All pages are plain HTML — open in any editor.
+
+- **Design tokens & layout:** `css/style.css`
+- **Shared JS:** `js/main.js` — nav, flame canvas, scroll reveal, counter animation, gallery lightbox
+
+## Adding real content
+
+### Replace gallery placeholders (index.html)
+Find tiles `gi-1` through `gi-8` and replace the `gallery-placeholder` div with:
+```html
+<img src="assets/gallery/your-photo.jpg" alt="Description" loading="lazy">
+```
+Drop photos into `assets/gallery/` (create the folder).
+
+### Add pending leader photos (leadership.html)
+Drop the photo into `assets/leaders/` then replace the "Photo Pending" block with:
+```html
+<div class="duty-photo">
+  <img src="assets/leaders/yourfile.jpg" alt="Name — Role" loading="lazy">
+  <div class="callsign">Call Sign<b>CALLSIGN</b></div>
+</div>
+```
+
+### Add real uniform photo (index.html)
+In the uniform showcase section, find `.uniform-svg-wrap` and replace the `<svg>` with:
+```html
+<img src="assets/uniform-2026.jpg" alt="Flaming Security 2026 Uniform" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
+```
+
+### Fill open unit head positions (leadership.html)
+Search for "Position Open" cards and replace with the filled card pattern above.
+
+## Still needed (photos)
+- Ground Control — Faith Opeyemi
+- Welfare — Roseline  
+- Traffic — Merit
+- Market Control — unit head (position open)
+- All Personnel — unit head (position open)
+- Event/gallery photos (crowd, training, deployment)
+- 2026 uniform reference photo

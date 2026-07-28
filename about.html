@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Flaming Security</title>
+<meta property="og:title" content="About — Flaming Security">
+<meta property="og:description" content="Six years of structured induction training, a code of conduct grounded in faith, and a track record of zero incidents. Learn who we are.">
+<meta property="og:image" content="assets/logo.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Flaming Security">
+<meta name="twitter:description" content="Six years of structured induction training, a code of conduct grounded in faith, and a track record of zero incidents. Learn who we are.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .convener-card{
+    display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:start;
+    background:var(--paper);border:1px solid var(--line);border-radius:8px;
+    overflow:hidden;box-shadow:var(--shadow-card);
+    transition:box-shadow .2s;
+  }
+  .convener-card:hover{box-shadow:var(--shadow-lift);}
+  @media(max-width:780px){.convener-card{grid-template-columns:1fr;}}
+  .convener-photo{
+    position:relative;background:var(--navy);
+    min-height:340px;overflow:hidden;
+  }
+  .convener-photo img{
+    width:100%;height:100%;object-fit:cover;object-position:top center;
+    display:block;
+    filter:contrast(1.04) brightness(1.02);
+    transition:transform .4s ease;
+  }
+  .convener-card:hover .convener-photo img{transform:scale(1.03);}
+  .convener-photo-overlay{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(0deg,rgba(7,21,46,.9) 0%,rgba(7,21,46,.3) 60%,transparent 100%);
+    padding:28px 20px 16px;
+  }
+  .convener-name{color:#fff;font-family:var(--display);font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;margin:0;}
+  .convener-title{color:var(--gold);font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;display:block;margin-top:3px;}
+  .convener-body{padding:28px 28px 28px 0;}
+  @media(max-width:780px){.convener-body{padding:24px;}}
+  .bio-text{font-size:.93rem;color:var(--ink-soft);line-height:1.75;}
+  .bio-text + .bio-text{margin-top:12px;}
+  .bio-tag{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--cream);border:1px solid var(--line);
+    border-radius:20px;padding:4px 12px;
+    font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--navy);margin:4px 4px 4px 0;
+  }
+  .programs-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;
+    margin-top:32px;
+  }
+  .program-chip{
+    background:var(--paper);border:1px solid var(--line);border-radius:6px;
+    padding:16px 18px;position:relative;overflow:hidden;
+    box-shadow:var(--shadow-card);
+    transition:transform .18s, box-shadow .18s;
+  }
+  .program-chip:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);}
+  .program-chip::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--ember),var(--gold));
+  }
+  .program-chip .yr{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--ember);text-transform:uppercase;}
+  .program-chip .theme{font-family:var(--display);font-size:.95rem;color:var(--navy);margin-top:4px;line-height:1.2;text-transform:uppercase;}
+  .program-chip.current{
+    background:var(--navy);border-color:var(--ember);
+  }
+  .program-chip.current::before{background:linear-gradient(90deg,var(--gold),var(--ember));}
+  .program-chip.current .yr{color:var(--gold);}
+  .program-chip.current .theme{color:#fff;}
+  .program-chip .sub{font-size:.76rem;color:var(--ink-soft);margin-top:6px;}
+  .program-chip.current .sub{color:rgba(255,255,255,.6);}
+
+  /* Code of conduct */
+  .coc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:840px){.coc-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:500px){.coc-grid{grid-template-columns:1fr;}}
+  .coc-item{
+    background:var(--paper);border:1px solid var(--line);
+    border-left:3px solid var(--ember);
+    border-radius:4px;padding:20px 18px;
+    box-shadow:var(--shadow-card);
+    transition:transform .18s;
+  }
+  .coc-item:hover{transform:translateY(-2px);}
+  .coc-item h4{font-size:.92rem;margin-bottom:6px;}
+  .coc-item p{font-size:.84rem;margin:0;}
+</style>
+</head>
+<body>
+
+<!-- Announcement bar -->
+<div class="announcement-bar" id="ann-bar">
+  <span class="pulse-dot"></span>
+  <span>🔥 Now accepting event bookings for 2026 — <a href="services.html">Book Flaming Security for your event</a></span>
+  <button class="announcement-close" onclick="document.getElementById('ann-bar').style.display='none'" aria-label="Close">&times;</button>
+</div>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="Flaming Security logo">
+      <span class="brand-text">Flaming Security<span>Serving with Excellence</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="units.html">Units &amp; KPIs</a></li>
+      <li><a href="services.html" class="book-badge">Book Us</a></li>
+      <li><a href="contact.html" class="cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="crumb">About the Department</span>
+    <h1>Why we serve.</h1>
+    <p>Flaming Security is the volunteer security department of the Young Ministers' Retreat — built to protect people so that ministry can happen without fear.</p>
+  </div>
+</section>
+
+<!-- MANDATE + VALUES -->
+<section>
+  <div class="container grid grid-2" style="gap:56px;">
+    <div class="reveal">
+      <div class="eyebrow">Our Mandate</div>
+      <h2>Security as an act of service.</h2>
+      <p>Every YMR gathering brings ministers, guests and thousands of attendees into one space. Flaming Security exists to make that space safe — scouting venues before anyone else arrives, holding the perimeter during the event, and following up with every volunteer after it ends. We are now in our sixth year of structured induction training and deployment.</p>
+      <p>We operate on a simple principle: firmness paired with courtesy. Every attendee is treated with dignity. Every post is held until properly relieved. Every incident is reported up the chain, not sat on until convenient.</p>
+    </div>
+    <div class="reveal" style="transition-delay:.1s;">
+      <div class="eyebrow">Core Values</div>
+      <h2>What we hold ourselves to.</h2>
+      <div class="policy-list">
+        <div style="display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line-soft);"><span class="num">01</span><div><strong>Excellence</strong><p style="margin:0;">A long-term standard of professionalism — never compromised for short-term convenience.</p></div></div>
+        <div style="display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line-soft);"><span class="num">02</span><div><strong>Integrity</strong><p style="margin:0;">Confidentiality of internal matters is mandatory. Gossip and disclosure to outsiders is not tolerated.</p></div></div>
+        <div style="display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line-soft);"><span class="num">03</span><div><strong>Vigilance</strong><p style="margin:0;">Situational awareness at every post — scanning zones, knowing your baseline, watching behaviour.</p></div></div>
+        <div style="display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line-soft);"><span class="num">04</span><div><strong>Christian Character</strong><p style="margin:0;">A mindset of forgiveness and respect; zero tolerance for harassment of attendees or fellow volunteers.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVENER SECTION -->
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">About the Convener</div>
+      <h2>The ministry behind the mission.</h2>
+      <p style="max-width:54ch;margin:0 auto;">Flaming Security serves under the YMR convener and his wife — whose ministry of revival, worship and women's empowerment shapes the culture every volunteer upholds on the field.</p>
+    </div>
+
+    <!-- P. Daniel -->
+    <div class="convener-card reveal" style="margin-bottom:28px;">
+      <div class="convener-photo">
+        <img src="assets/leaders/pdaniel.jpg" alt="Pastor Daniel Olawande — YMR Convener" loading="lazy">
+        <div class="convener-photo-overlay">
+          <p class="convener-name">Pastor Daniel Olawande</p>
+          <span class="convener-title">YMR Convener · Minister · Revivalist</span>
+        </div>
+      </div>
+      <div class="convener-body">
+        <div class="eyebrow">The Convener</div>
+        <h2 style="font-size:1.5rem;margin-bottom:16px;">P. Daniel</h2>
+        <p class="bio-text">Pastor Daniel Olawande — known widely as P. Daniel — is a minister, songwriter, revivalist, pastor and youth leader born on August 8, 1991, in Ekiti State, Nigeria. He grew up in a devout Christian family and pursued his education in Biology Education and Educational Psychology.</p>
+        <p class="bio-text">P. Daniel is an ordained minister in the Redeemed Christian Church of God (RCCG) and serves as the lead pastor of RCCG The Envoys in Lagos. He holds several roles within the RCCG including National Youth President and Youth Evangelist.</p>
+        <p class="bio-text">His music — including "Iferepo" and "Rainfall" — features heartfelt Yoruba and English worship, often in collaboration with his wife, Pastor Mrs. Oluwanifemi Olawande. His ministry has inspired a global audience, and in 2020 he was recognized as one of Nigeria's 100 Guardians of Faith.</p>
+        <div style="margin-top:18px;">
+          <span class="bio-tag">RCCG Ordained Minister</span>
+          <span class="bio-tag">Lead Pastor — The Envoys Lagos</span>
+          <span class="bio-tag">National Youth President</span>
+          <span class="bio-tag">100 Guardians of Faith 2020</span>
+          <span class="bio-tag">Songwriter &amp; Revivalist</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nifemi -->
+    <div class="convener-card reveal" style="transition-delay:.1s;">
+      <div class="convener-photo">
+        <img src="assets/leaders/nifemi.jpg" alt="Pastor Nifemi Olawande — Co-Convener" loading="lazy">
+        <div class="convener-photo-overlay">
+          <p class="convener-name">Nifemi Olawande</p>
+          <span class="convener-title">Pastor · Author · Women's Empowerment Leader</span>
+        </div>
+      </div>
+      <div class="convener-body">
+        <div class="eyebrow">Co-Convener &amp; First Lady</div>
+        <h2 style="font-size:1.5rem;margin-bottom:16px;">Pastor Nifemi Olawande</h2>
+        <p class="bio-text">Nifemi Olawande is a multifaceted individual with a passion for empowering women and children through education and spiritual growth. She is the Executive Director of The Prophetic Woman, a non-governmental organization focused on spiritual discipleship and women's empowerment.</p>
+        <p class="bio-text">Her Spiritual Growth Bootcamp (SGBC) is an annual 14-day intensive designed to help believers deepen their intimacy with God and rekindle their passion for Him. As a fashion entrepreneur, she leads Phos Doxa Clothings (PDC), a brand offering ready-to-wear dresses globally.</p>
+        <p class="bio-text">Nifemi is also an author, having written four books that have significantly impacted the lives of over 7,000 women. Her commitment to raising an army of women whose hearts burn for God is evident across every platform she serves.</p>
+        <div style="margin-top:18px;">
+          <span class="bio-tag">Executive Director — The Prophetic Woman</span>
+          <span class="bio-tag">SGBC Founder</span>
+          <span class="bio-tag">Fashion Entrepreneur — Phos Doxa Clothings</span>
+          <span class="bio-tag">Author · 4 Published Books</span>
+          <span class="bio-tag">7,000+ Women Impacted</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS AT A GLANCE -->
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">YMR Security Programs</div>
+      <h2>Programs at a glance.</h2>
+      <p style="max-width:52ch;margin:0 auto;">Every year, Flaming Security deploys around a theme that reflects the season of the ministry. Six years of training. One consistent standard.</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-chip reveal">
+        <div class="yr">2017</div>
+        <div class="theme">The Emergence</div>
+        <div class="sub">Fire for needed impact</div>
+      </div>
+      <div class="program-chip reveal" style="transition-delay:.04s;">
+        <div class="yr">2018</div>
+        <div class="theme">Explosive Exploits</div>
+      </div>
+      <div class="program-chip reveal" style="transition-delay:.08s;">
+        <div class="yr">2019</div>
+        <div class="theme">Fire to Take the City</div>
+      </div>
+      <div class="program-chip reveal" style="transition-delay:.12s;">
+        <div class="yr">2020</div>
+        <div class="theme">Go in This Thy Might</div>
+      </div>
+      <div class="program-chip reveal" style="transition-delay:.16s;">
+        <div class="yr">2021</div>
+        <div class="theme">Weapons of War</div>
+      </div>
+      <div class="program-chip reveal" style="transition-delay:.20s;">
+        <div class="yr">2022</div>
+        <div class="theme">Witnesses</div>
+      </div>
+      <div class="program-chip reveal" style="transition-delay:.24s;">
+        <div class="yr">2023</div>
+        <div class="theme">The Rain</div>
+      </div>
+      <div class="program-chip reveal" style="transition-delay:.28s;">
+        <div class="yr">2024</div>
+        <div class="theme">Floodgates</div>
+      </div>
+      <div class="program-chip reveal" style="transition-delay:.32s;">
+        <div class="yr">2025</div>
+        <div class="theme">The New Army</div>
+      </div>
+      <div class="program-chip current reveal" style="transition-delay:.36s;">
+        <div class="yr">2026 — Announced</div>
+        <div class="theme">City Takers</div>
+        <div class="sub">LHG — Holy Ghost Festival 2026 at UNILAG · YAC · JMBS (In Progress) · Qavah (In Progress)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CODE OF CONDUCT -->
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">Code of Conduct</div>
+      <h2>What every volunteer commits to.</h2>
+      <p style="max-width:52ch;margin:0 auto;">From the moment you're deployed to the moment you're stood down, these standards are non-negotiable — for General Personnel, Unit Heads and command officers alike.</p>
+    </div>
+    <div class="coc-grid">
+      <div class="coc-item reveal">
+        <h4>Punctuality &amp; Uniform</h4>
+        <p>Report at least 20–30 minutes before call-up in full, clean, pressed uniform. Late arrivals are excluded from that session's service. Incorrect uniform = same consequence.</p>
+      </div>
+      <div class="coc-item reveal" style="transition-delay:.06s;">
+        <h4>Post Discipline</h4>
+        <p>No post may be left without a formal handover approved by a Unit Head or Assistant Unit Head. Abandoning post without authorization is a serious breach.</p>
+      </div>
+      <div class="coc-item reveal" style="transition-delay:.12s;">
+        <h4>Incident Reporting</h4>
+        <p>Incidents are escalated immediately through the chain of command. Nothing is held until after the event. If in doubt, report up — do not make unilateral decisions on the floor.</p>
+      </div>
+      <div class="coc-item reveal" style="transition-delay:.18s;">
+        <h4>Zero Tolerance Items</h4>
+        <p>Weapons, alcohol, drugs, explosives and unauthorized recording gear are banned for all personnel — including any attached military or paramilitary staff — without exception.</p>
+      </div>
+      <div class="coc-item reveal" style="transition-delay:.24s;">
+        <h4>Attendee Dignity</h4>
+        <p>Every attendee is treated with courtesy and respect. Harassment — physical, verbal or otherwise — of any attendee or fellow volunteer results in immediate removal from the department.</p>
+      </div>
+      <div class="coc-item reveal" style="transition-delay:.30s;">
+        <h4>Confidentiality</h4>
+        <p>Internal matters — personnel decisions, incident details, command communications — stay internal. Disclosure to outsiders or social media without authorization is a disciplinary matter.</p>
+      </div>
+      <div class="coc-item reveal" style="transition-delay:.36s;">
+        <h4>Chain of Command</h4>
+        <p>The chain of command is respected regardless of a volunteer's personal status or seniority outside the department. Only authorized officers may give orders on the field.</p>
+      </div>
+      <div class="coc-item reveal" style="transition-delay:.42s;">
+        <h4>Equipment Accountability</h4>
+        <p>All issued gear is your responsibility. Damage or loss in your care is paid for by you — repair cost for repairable items, replacement cost for total losses. See the Equipment Policy page.</p>
+      </div>
+      <div class="coc-item reveal" style="transition-delay:.48s;">
+        <h4>Christian Character On and Off Post</h4>
+        <p>Volunteers represent the ministry — not only during the event. Conduct unbecoming of a Christian minister before, during or after deployment is subject to review.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:32px;">
+      <h4>Breaches &amp; Consequences</h4>
+      <p style="margin:0;">Any breach of this Code of Conduct is reported to the Unit Head and escalated to the HOD. Depending on severity, consequences range from a formal warning and exclusion from that session's service, to suspension from the department for a full cycle, to permanent removal. The chain of command — not individual officers — determines outcomes. The All Personnel Unit leads investigation alongside CI before a matter is brought to a final decision.</p>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY TIMELINE -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Journey</div>
+      <h2>Building the department, one cycle at a time.</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="when">Ongoing</span>
+        <h3 style="font-size:1.05rem;">One Organizational Culture</h3>
+        <p>Every unit — Central Intelligence, Access Control, Advance, Ground, Market, Traffic and Welfare — is treated as equally important, with no unit receiving preferential treatment.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">Annually — Now Year 6</span>
+        <h3 style="font-size:1.05rem;">Structured Induction Training</h3>
+        <p>Multi-session induction covering unit structure, universal duties, field skills, de-escalation, emergency protocols and radio discipline — now in its sixth year.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">Every Cycle</span>
+        <h3 style="font-size:1.05rem;">KPI &amp; Leadership Scorecard</h3>
+        <p>A four-quadrant Balanced Scorecard framework holds every leader accountable for financial stewardship, stakeholder service, process discipline and personal growth.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">Beyond YMR</span>
+        <h3 style="font-size:1.05rem;">Community Outreach Support</h3>
+        <p>Personnel have supported large-scale evangelical outreach events across Lagos, including the Lagos Holy Ghost Festival at UNILAG, working alongside LASTMA, LNSC and partner cadet corps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- NEWSLETTER -->
+<div class="newsletter-bar">
+  <div class="container newsletter-inner">
+    <div>
+      <div class="eyebrow" style="color:var(--gold);">Stay Connected</div>
+      <h3 style="color:#fff;font-size:1.3rem;margin:0;">Get deployment updates &amp; programme news.</h3>
+      <p style="color:rgba(255,255,255,.6);font-size:.88rem;margin:6px 0 0;max-width:38ch;">Join our mailing list — no spam, just event announcements, induction cycles and deployment highlights.</p>
+    </div>
+    <div>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" class="newsletter-input" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit" class="newsletter-btn">Subscribe</button>
+      </form>
+      <p style="color:rgba(255,255,255,.35);font-size:.72rem;margin:8px 0 0;font-family:var(--mono);letter-spacing:.06em;">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Flaming Security logo">
+          <strong style="color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;">Flaming Security</strong>
+        </div>
+        <p style="color:rgba(255,255,255,.5);font-size:.88rem;max-width:30ch;">Serving with Excellence · Integrity · Vigilance · Christian Character.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://wa.me/2349068549539" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.138.566 4.14 1.546 5.877L.057 23.997l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.878 9.878 0 01-5.034-1.374l-.36-.214-3.742.981.999-3.648-.235-.374A9.846 9.846 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106S21.894 6.58 21.894 12 17.42 21.894 12 21.894z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="units.html">Units &amp; KPIs</a></li>
+          <li><a href="services.html">Book Our Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Units</h4>
+        <ul>
+          <li>Central Intelligence</li>
+          <li>Advance Team</li>
+          <li>Access Control</li>
+          <li>Ground Control</li>
+          <li>Traffic · Market · Welfare</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Reach Us</h4>
+        <ul>
+          <li><a href="mailto:flamingsecurity@gmail.com">flamingsecurity@gmail.com</a></li>
+          <li>Km 46, Lagos–Ibadan Exp. Way, Mowe, Ogun State</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Flaming Security. All rights reserved.</span>
+      <span>Serving with Excellence · Integrity · Vigilance · Christian Character</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/2349068549539?text=Hello%20Flaming%20Security%2C%20I'd%20like%20to%20enquire%20about%20your%20services." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.138.566 4.14 1.546 5.877L.057 23.997l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.878 9.878 0 01-5.034-1.374l-.36-.214-3.742.981.999-3.648-.235-.374A9.846 9.846 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106S21.894 6.58 21.894 12 17.42 21.894 12 21.894z"/></svg>
+</a>
+
+
+<script>
+function handleNewsletter(e){
+  e.preventDefault();
+  var email = e.target.querySelector('input').value;
+  window.location.href = 'mailto:flamingsecurity@gmail.com?subject=Newsletter%20Subscription&body=Please%20add%20me%20to%20your%20mailing%20list%3A%20' + encodeURIComponent(email);
+}
+</script>
+
+
+<!-- Sticky Booking Bar -->
+<div class="sticky-book" id="sticky-book">
+  <div class="sticky-book-text"><strong>Need security for your event?</strong> We're accepting bookings for 2026.</div>
+  <div class="sticky-book-actions">
+    <a href="services.html" class="btn btn-primary" style="padding:10px 20px;font-size:.72rem;">View Services</a>
+    <a href="https://wa.me/2349068549539?text=Hello%2C%20I'd%20like%20to%20book%20Flaming%20Security." target="_blank" rel="noopener" class="btn btn-ghost" style="padding:10px 20px;font-size:.72rem;color:#25D366;border-color:#25D366;">WhatsApp</a>
+  </div>
+</div>
+<button class="back-top" id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+<nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+  <a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a>
+  <a href="about.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>About</a>
+  <a href="services.html" class="book-now"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>Book Us</a>
+  <a href="leadership.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>Team</a>
+  <a href="contact.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Contact</a>
+</nav>
+<script>
+(function(){
+  var sticky=document.getElementById('sticky-book');
+  var backTop=document.getElementById('back-top');
+  var triggered=false;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY;
+    if(y>500&&!triggered){sticky.classList.add('visible');triggered=true;}
+    if(y<300&&triggered){sticky.classList.remove('visible');triggered=false;}
+    if(backTop){y>400?backTop.classList.add('visible'):backTop.classList.remove('visible');}
+  });
+  var here=location.pathname.split('/').pop()||'index.html';
+  document.querySelectorAll('.mobile-bottom-nav a').forEach(function(a){
+    if(a.getAttribute('href')===here)a.classList.add('active');
+  });
+})();
+function handleNewsletter(e){
+  e.preventDefault();
+  var email=e.target.querySelector('input').value;
+  window.location.href='mailto:flamingsecurity@gmail.com?subject=Newsletter%20Subscription&body=Please%20add%20me%3A%20'+encodeURIComponent(email);
+}
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
