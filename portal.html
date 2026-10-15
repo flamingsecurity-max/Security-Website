@@ -1061,6 +1061,7 @@ $("menuToggle").addEventListener("click", () => {
 // AUTHORIZATION
 // ================================================
 
+
 async function verifyAdmin() {
     const { data, error } = await db.auth.getUser();
 
@@ -1070,13 +1071,17 @@ async function verifyAdmin() {
         return false;
     }
 
-    const { data: profile, error: profileError } = await db
-        .from("profiles")
-        .select("full_name, role")
-        .eq("id", data.user.id)
+    const { data: admin, error: adminError } = await db
+        .from("admin_users")
+        .select("email, role")
+        .eq("user_id", data.user.id)
         .maybeSingle();
 
-    if (profileError || !profile || profile.role !== "admin") {
+    if (
+        adminError ||
+        !admin ||
+        !["admin", "super_admin"].includes(admin.role)
+    ) {
         currentUser = null;
 
         await db.auth.signOut();
@@ -1091,7 +1096,7 @@ async function verifyAdmin() {
     currentUser = data.user;
 
     $("adminWelcome").textContent =
-        "Welcome, " + (profile.full_name || "Administrator");
+        "Welcome, " + (admin.email || "Administrator");
 
     showPortal();
 
@@ -1106,7 +1111,7 @@ $("loginForm").addEventListener("submit", async event => {
     const button = $("loginButton");
 
     button.disabled = true;
-    button.textContent = "Verifying access...";
+    button.textContent = "hold uppppp...";
     setMessage("loginMessage", "");
 
     try {
@@ -1156,6 +1161,8 @@ async function logout() {
 }
 
 $("logoutButton").addEventListener("click", logout);
+
+
 
 // ================================================
 // LOAD ALL PORTAL DATA
