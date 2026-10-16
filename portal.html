@@ -573,6 +573,304 @@
                 padding: 17px;
             }
         }
+        @media (max-width: 720px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .login-wrap {
+        margin: 24px auto;
+        padding: 14px;
+    }
+
+    .login-card {
+        padding: 22px 18px;
+    }
+
+    .layout {
+        display: block;
+        width: 100%;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        padding: 16px 14px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar.open {
+        display: block;
+    }
+
+    .sidebar-subtitle {
+        margin-bottom: 16px;
+    }
+
+    .menu-label {
+        margin: 16px 10px 7px;
+    }
+
+    .nav-btn {
+        padding: 12px;
+        min-height: 44px;
+    }
+
+    .topbar {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 13px 14px;
+    }
+
+    .topbar > div:first-child {
+        flex: 1;
+        min-width: 0;
+        align-items: flex-start !important;
+        gap: 9px !important;
+    }
+
+    .topbar h1 {
+        font-size: 16px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .topbar p {
+        font-size: 11px;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+    }
+
+    .menu-toggle {
+        flex: 0 0 auto;
+        min-width: 42px;
+        min-height: 42px;
+        padding: 9px 11px;
+    }
+
+    .top-actions {
+        flex: 0 0 auto;
+        gap: 6px;
+    }
+
+    #refreshAllButton {
+        padding: 10px;
+        min-height: 42px;
+        font-size: 12px;
+    }
+
+    .content {
+        padding: 14px 12px;
+    }
+
+    .welcome {
+        margin-bottom: 17px;
+    }
+
+    .welcome h2,
+    .section-heading h2 {
+        font-size: 20px;
+        line-height: 1.35;
+    }
+
+    .welcome p,
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .stat-card,
+    .panel {
+        padding: 14px;
+        border-radius: 9px;
+    }
+
+    .stat-card p {
+        font-size: 11px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        overflow-wrap: anywhere;
+    }
+
+    .stat-card h3 {
+        font-size: 24px;
+    }
+
+    .panel {
+        margin-bottom: 14px;
+    }
+
+    .panel h2,
+    .panel h3 {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .panel-description {
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        margin-top: 14px;
+    }
+
+    .quick-btn {
+        min-width: 0;
+        padding: 12px 10px;
+        overflow-wrap: anywhere;
+    }
+
+    .quick-btn strong {
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 6px;
+    }
+
+    .quick-btn span {
+        display: block;
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .toolbar {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 9px;
+        margin: 14px 0;
+    }
+
+    .toolbar input,
+    .toolbar select,
+    .toolbar button {
+        width: 100%;
+        min-height: 43px;
+        flex: none;
+    }
+
+    input,
+    select {
+        font-size: 16px;
+    }
+
+    .primary,
+    .secondary,
+    .danger {
+        min-height: 42px;
+        padding: 11px 13px;
+    }
+
+    .table-wrapper {
+        margin-top: 13px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 7px;
+    }
+
+    table {
+        min-width: 620px;
+    }
+
+    th,
+    td {
+        padding: 11px 10px;
+    }
+
+    .action-buttons {
+        min-width: 120px;
+    }
+
+    .action-buttons button {
+        min-height: 34px;
+    }
+
+    .scanner-area {
+        max-width: 100%;
+    }
+
+    #reader {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #reader video {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .result-box {
+        padding: 13px;
+    }
+
+    #qrCode {
+        padding: 10px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    #qrCode canvas,
+    #qrCode img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .manual-form {
+        max-width: 100%;
+    }
+
+    .footer {
+        padding: 18px 12px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 380px) {
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .topbar > div:first-child {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .top-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 11px;
+    }
+
+    .stat-card h3 {
+        font-size: 22px;
+    }
+
+    .quick-actions {
+        gap: 8px;
+    }
+
+    .quick-btn {
+        padding: 11px 9px;
+    }
+}
+
     </style>
 </head>
 
@@ -1111,7 +1409,7 @@ $("loginForm").addEventListener("submit", async event => {
     const button = $("loginButton");
 
     button.disabled = true;
-    button.textContent = "hold uppppp...";
+    button.textContent = "Identify ya self...";
     setMessage("loginMessage", "");
 
     try {
@@ -1123,7 +1421,7 @@ $("loginForm").addEventListener("submit", async event => {
         if (error) {
             setMessage(
                 "loginMessage",
-                "Login failed. Check your email and password.",
+                "You go tell me when you turn Admin.",
                 "error"
             );
             return;
@@ -1157,7 +1455,7 @@ async function logout() {
     }
 
     currentUser = null;
-    showLogin("You have signed out successfully.");
+    showLogin("Bye Bye oo");
 }
 
 $("logoutButton").addEventListener("click", logout);
